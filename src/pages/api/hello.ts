@@ -1,13 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import { ExtendedNextApiRequest, ICustomResponse, IHelloMessage, IYourAPIData } from './types/apiTypes';
 
-type Data = {
-  name: string
-}
-
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
+export default function handler(req: ExtendedNextApiRequest<IYourAPIData>, res: ICustomResponse<IHelloMessage>) {
+	res
+		.status(200)
+		.json({ message: 'Hello,  welcome to your next.js typescript + styled-components project. Happy hacking!!' });
 }
