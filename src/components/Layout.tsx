@@ -1,6 +1,6 @@
-import { SuspenseProps } from 'react';
+import { PropsWithChildren } from 'react';
 
-const Layout = ({ children }: SuspenseProps) => {
+const Layout = ({ children }: PropsWithChildren) => {
 	return (
 		<>
 			<main>{children}</main>
